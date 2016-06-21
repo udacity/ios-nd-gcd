@@ -37,13 +37,13 @@ class ViewController: UIViewController {
     // This method downloads a huge image, blocking the main queue and
     // the UI.
     // This si for instructional purposes only, never do this.
-    @IBAction func synchronousDownload(sender: UIBarButtonItem) {
+    @IBAction func synchronousDownload(_ sender: UIBarButtonItem) {
         
         // Get the URL for the image
         // Obtain the NSData with the image
         // Turn it into a UIImage
-        if let url = NSURL(string: BigImages.seaLion.rawValue),
-            let imgData = NSData(contentsOfURL: url),
+        if let url = URL(string: BigImages.seaLion.rawValue),
+            let imgData = try? Data(contentsOf: url),
             let image = UIImage(data: imgData){
             
             // Display it
@@ -53,25 +53,25 @@ class ViewController: UIViewController {
     
     // This method avoids blocking by creating a new queue that runs
     // in the background, without blocking the UI.
-    @IBAction func simpleAsynchronousDownload(sender: UIBarButtonItem) {
+    @IBAction func simpleAsynchronousDownload(_ sender: UIBarButtonItem) {
         
         // Get the URL for the image
-        let url = NSURL(string: BigImages.shark.rawValue)
+        let url = URL(string: BigImages.shark.rawValue)
         
         // create a queue
-        let downloadQueue = dispatch_queue_create("download", nil)
+        let downloadQueue = DispatchQueue(label: "download", attributes: [])
         
         // add a closure that encapsulates the blocking operation
         // run it asynchronously: some time in the near future
-        dispatch_async(downloadQueue) { () -> Void in
+        downloadQueue.async { () -> Void in
             // Obtain the NSData with the image
-            let imgData = NSData(contentsOfURL: url!)
+            let imgData = try? Data(contentsOf: url!)
             
             // Turn it into a UIImage
             let image = UIImage(data: imgData!)
             
             // Run the code that updates the UI in the main queue!
-            dispatch_async(dispatch_get_main_queue(), { () -> Void in
+            DispatchQueue.main.async(execute: { () -> Void in
                 // Display it
                 self.photoView.image = image
             })
@@ -80,7 +80,7 @@ class ViewController: UIViewController {
     
     // This code downloads the huge image in a global queue and uses a completion
     // closure.
-    @IBAction func asynchronousDownload(sender: UIBarButtonItem) {
+    @IBAction func asynchronousDownload(_ sender: UIBarButtonItem) {
         withBigImage { (image) -> Void in
             // Display it
             self.photoView.image = image
@@ -89,7 +89,7 @@ class ViewController: UIViewController {
     
     // Changes the alpha value (transparency of the image). It's only purpose is to show if the
     // UI is blocked or not.
-    @IBAction func setTransparencyOfImage(sender: UISlider) {
+    @IBAction func setTransparencyOfImage(_ sender: UISlider) {
         photoView.alpha = CGFloat(sender.value)
     }
     
@@ -101,18 +101,18 @@ class ViewController: UIViewController {
     // Go download the image, and once you're done, do _this_ (the completion handler)
     func withBigImage(completionHandler handler: (image: UIImage) -> Void) {
         
-        dispatch_async(dispatch_get_global_queue(QOS_CLASS_USER_INITIATED, 0)) { () -> Void in
+        DispatchQueue.global(attributes: .qosUserInitiated).async { () -> Void in
             
             // get the url
             // get the NSData
             // turn it into a UIImage
-            if let url = NSURL(string: BigImages.whale.rawValue),
-                let imgData = NSData(contentsOfURL: url),
+            if let url = URL(string: BigImages.whale.rawValue),
+                let imgData = try? Data(contentsOf: url),
                 let img = UIImage(data: imgData) {
                 
                 // run the completion block
                 // always in the main queue, just in case!
-                dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                DispatchQueue.main.async(execute: { () -> Void in
                     handler(image: img)
                 })
             }

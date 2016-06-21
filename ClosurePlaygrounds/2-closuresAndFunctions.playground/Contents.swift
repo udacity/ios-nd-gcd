@@ -54,19 +54,19 @@ It **is** the same thing!
 let soitenly = UIImage(named: "soitenly.jpg")
 
 // add a few functions to an array and then call them
-func larry(x:Int) -> Int {
+func larry(x: Int) -> Int {
     return x * x
 }
 
-func curly(n:Int) -> Int {
+func curly(n: Int) -> Int {
     return n * (n - 1)
 }
 
-func moe(n:Int) -> Int {
+func moe(n: Int) -> Int {
     return n * (n - 1) * (n - 2)
 }
 
-var stooges = [larry, curly, moe]
+var stooges: [(Int) -> Int] = [larry, curly, moe]
 
 for stooge in stooges {
     stooge(42)

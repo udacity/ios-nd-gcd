@@ -37,13 +37,13 @@ class ViewController: UIViewController {
     // This method downloads a huge image, blocking the main queue and
     // the UI.
     // This si for instructional purposes only, never do this.
-    @IBAction func synchronousDownload(sender: UIBarButtonItem) {
+    @IBAction func synchronousDownload(_ sender: UIBarButtonItem) {
         
         // Get the URL for the image
-        let url = NSURL(string: BigImages.seaLion.rawValue)
+        let url = URL(string: BigImages.seaLion.rawValue)
         
         // Obtain the NSData with the image
-        let imgData = NSData(contentsOfURL: url!)
+        let imgData = try? Data(contentsOf: url!)
         
         // Turn it into a UIImage
         let image = UIImage(data: imgData!)
@@ -54,19 +54,19 @@ class ViewController: UIViewController {
     
     // This method avoids blocking by creating a new queue that runs
     // in the background, without blocking the UI.
-    @IBAction func simpleAsynchronousDownload(sender: UIBarButtonItem) {
+    @IBAction func simpleAsynchronousDownload(_ sender: UIBarButtonItem) {
 
     }
     
     // This code downloads the huge image in a global queue and uses a completion
     // closure.
-    @IBAction func asynchronousDownload(sender: UIBarButtonItem) {
+    @IBAction func asynchronousDownload(_ sender: UIBarButtonItem) {
 
     }
     
     // Changes the alpha value (transparency of the image). It's only purpose is to show if the
     // UI is blocked or not.
-    @IBAction func setTransparencyOfImage(sender: UISlider) {
+    @IBAction func setTransparencyOfImage(_ sender: UISlider) {
         photoView.alpha = CGFloat(sender.value)
     }
 }
