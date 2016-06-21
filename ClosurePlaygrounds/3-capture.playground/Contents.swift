@@ -39,8 +39,8 @@ Something like being able to call *Issur Danielovitch Demsky* *Kirk Douglas*. Mu
 /*:
 Let's start with something simple. I don't like having to call a Integer an Int. Can we change that? Of course!
 
-Just use the follwoing template:
-```typealias NewName+OldName```
+Just use the following template:
+```typealias NewName = OldName```
 */
 typealias Integer = Int
 
@@ -140,7 +140,7 @@ counter1()
 
 
 /*:
-#### And now, for the *grand finale*, what dou you think this call will return?
+#### And now, for the *grand finale*, what do you think this call will return?
 
 QUIZ
 Explain why you think it will return the value you expect
@@ -164,14 +164,14 @@ We've learned quite a few things about Swift in this lesson, so let's recap:
 * Functions and closures are first-class citizens of our language: we can treat them like any other type.
 * Functions and closure capture variables defined before the closure or function is defined.
 
-It might not seem obvious to you at this point, but thos 2 last features make Swift a far more powerful language. They are the base of a different style of programming called *Functional Programming*. 
+It might not seem obvious to you at this point, but those 2 last features make Swift a far more powerful language. They are the base of a different style of programming called *Functional Programming*.
 
-Its popularity is increasing a lot lately. However, you won't need it to finish the NanoDegree or even land your first job, so don't worry, it's something that you can learn later if you want.
+Its popularity is increasing a lot lately. However, you won't need it to finish the Nanodegree program or even land your first job, so don't worry, it's something that you can learn later if you want.
 
 If you are interested, you might want to read any of these books:
 
-* [To Mock a mockingbird by Raymond Smullyan](http://www.amazon.com/To-Mock-Mockingbird-Other-Puzzles/dp/0192801422): a gentle introduction to Functional Programming using birds as an analogy.
-* [Functional programming in Swift by Chris Eidhof and Florian Kugler](https://www.objc.io/books/fpinswift/). This book assumes you already know Swift and teaches you how to use in a functional way.
+* [To Mock a Mockingbird](http://www.amazon.com/To-Mock-Mockingbird-Other-Puzzles/dp/0192801422) by Raymond Smullyan: a gentle introduction to Functional Programming using birds as an analogy.
+* [Functional Programming in Swift](https://www.objc.io/books/fpinswift/) by Chris Eidhof and Florian Kugler. This book assumes you already know Swift and teaches you how to use in a functional way.
 
 ## On to Grand Central Dispatch
 
