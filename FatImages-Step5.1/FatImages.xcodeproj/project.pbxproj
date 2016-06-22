@@ -7,20 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A9C863EA1D1ABCAC007ADF58 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = A9C863E81D1ABCAC007ADF58 /* LaunchScreen.xib */; };
 		EDBED20A1BCC6A05003B7DB5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDBED2091BCC6A05003B7DB5 /* AppDelegate.swift */; };
 		EDBED20C1BCC6A05003B7DB5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDBED20B1BCC6A05003B7DB5 /* ViewController.swift */; };
 		EDBED20F1BCC6A05003B7DB5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EDBED20D1BCC6A05003B7DB5 /* Main.storyboard */; };
 		EDBED2111BCC6A05003B7DB5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EDBED2101BCC6A05003B7DB5 /* Assets.xcassets */; };
-		EDBED2141BCC6A05003B7DB5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EDBED2121BCC6A05003B7DB5 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A9C863E91D1ABCAC007ADF58 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		EDBED2061BCC6A05003B7DB5 /* FatImages.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FatImages.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EDBED2091BCC6A05003B7DB5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EDBED20B1BCC6A05003B7DB5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		EDBED20E1BCC6A05003B7DB5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		EDBED2101BCC6A05003B7DB5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		EDBED2131BCC6A05003B7DB5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EDBED2151BCC6A05003B7DB5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -58,7 +58,7 @@
 				EDBED20B1BCC6A05003B7DB5 /* ViewController.swift */,
 				EDBED20D1BCC6A05003B7DB5 /* Main.storyboard */,
 				EDBED2101BCC6A05003B7DB5 /* Assets.xcassets */,
-				EDBED2121BCC6A05003B7DB5 /* LaunchScreen.storyboard */,
+				A9C863E81D1ABCAC007ADF58 /* LaunchScreen.xib */,
 				EDBED2151BCC6A05003B7DB5 /* Info.plist */,
 			);
 			path = FatImages;
@@ -123,8 +123,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EDBED2141BCC6A05003B7DB5 /* LaunchScreen.storyboard in Resources */,
 				EDBED2111BCC6A05003B7DB5 /* Assets.xcassets in Resources */,
+				A9C863EA1D1ABCAC007ADF58 /* LaunchScreen.xib in Resources */,
 				EDBED20F1BCC6A05003B7DB5 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -144,20 +144,20 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		A9C863E81D1ABCAC007ADF58 /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A9C863E91D1ABCAC007ADF58 /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
 		EDBED20D1BCC6A05003B7DB5 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				EDBED20E1BCC6A05003B7DB5 /* Base */,
 			);
 			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		EDBED2121BCC6A05003B7DB5 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				EDBED2131BCC6A05003B7DB5 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
