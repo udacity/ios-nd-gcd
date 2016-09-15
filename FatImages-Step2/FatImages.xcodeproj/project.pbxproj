@@ -57,8 +57,8 @@
 				EDBED2091BCC6A05003B7DB5 /* AppDelegate.swift */,
 				EDBED20B1BCC6A05003B7DB5 /* ViewController.swift */,
 				EDBED20D1BCC6A05003B7DB5 /* Main.storyboard */,
-				EDBED2101BCC6A05003B7DB5 /* Assets.xcassets */,
 				A9C863D61D1ABC31007ADF58 /* LaunchScreen.xib */,
+				EDBED2101BCC6A05003B7DB5 /* Assets.xcassets */,
 				EDBED2151BCC6A05003B7DB5 /* Info.plist */,
 			);
 			path = FatImages;

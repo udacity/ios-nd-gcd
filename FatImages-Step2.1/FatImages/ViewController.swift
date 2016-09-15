@@ -8,6 +8,8 @@
 
 import UIKit
 
+// MARK: - BigImages: String
+
 // Wondering why we only use https connections?
 // It's because of a new iOS feature called App Transport Security.
 // From now on, Apps can only access resources through a secure
