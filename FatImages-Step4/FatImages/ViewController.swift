@@ -8,6 +8,8 @@
 
 import UIKit
 
+// MARK: - BigImages: String
+
 // Wondering why we only use https connections?
 // It's because of a new iOS feature called App Transport Security.
 // From now on, Apps can only access resources through a secure
@@ -99,7 +101,7 @@ class ViewController: UIViewController {
     // finished, it runs the closure it receives as a parameter.
     // This closure is called a completion handler
     // Go download the image, and once you're done, do _this_ (the completion handler)
-    func withBigImage(completionHandler handler: (image: UIImage) -> Void){
+    func withBigImage(completionHandler handler: (image: UIImage) -> Void) {
         
         dispatch_async(dispatch_get_global_queue(QOS_CLASS_USER_INITIATED, 0)) { () -> Void in
             
