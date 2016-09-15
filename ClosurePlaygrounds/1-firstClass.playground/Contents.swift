@@ -49,7 +49,7 @@ let closures = [
     f,                                  // our previous closure
     {(x:Int) -> Int in return x * 2},   // a new Int -> Int closure
     {x in return x - 8},                // no need for the type of the closure!
-    {x in x * x},                       // no need for return if only one line
+    {(x:Int) in x * x},                       // no need for return if only one line
     {$0 * 42}                           // access parameter by position instead of name
 ]
 
