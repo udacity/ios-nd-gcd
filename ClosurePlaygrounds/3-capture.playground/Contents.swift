@@ -64,7 +64,7 @@ Now let's create a typealias for a function that takes no parameters (Void) and 
 
 I'll call that an ```IntMaker```:
 */
-typealias IntMaker = (Void) -> Int
+typealias IntMaker = () -> Int
 
 /*:
 ## Variable capture, at last!

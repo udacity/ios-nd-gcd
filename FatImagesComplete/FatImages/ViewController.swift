@@ -27,6 +27,12 @@ class ViewController: UIViewController {
 
     // MARK: Actions
     
+    @IBAction func setTransparencyOfImage(sender: UISlider) {
+        photoView.alpha = CGFloat(sender.value)
+    }
+    
+    // MARK: - Sync Download
+    
     // this method downloads a huge image, blocking the main queue and the UI
     // (for instructional purposes only, never do this in a production app)
     @IBAction func synchronousDownload(sender: UIBarButtonItem) {
@@ -45,6 +51,8 @@ class ViewController: UIViewController {
             self.activityView.stopAnimating()
         }
     }
+    
+    // MARK: - Async Download
     
     // this method avoids blocking by creating a background queue, without blocking the UI
     @IBAction func simpleAsynchronousDownload(sender: UIBarButtonItem) {
@@ -73,12 +81,13 @@ class ViewController: UIViewController {
         }
     }
     
-    // download the huge image on a global queue and uses a completion handler (closure)
+    // MARK: - Async Download (with Completion Handler)
+    
     @IBAction func asynchronousDownload(sender: UIBarButtonItem) {
         // start animation
         activityView.startAnimating()
         
-        withBigImage { (image) -> Void in
+        downloadBigImage { (image) -> Void in
             // display it
             self.photoView.image = image
             
@@ -87,16 +96,9 @@ class ViewController: UIViewController {
         }
     }
     
-    // changes the transparency of the image (to show if the UI is blocked or not)
-    @IBAction func setTransparencyOfImage(sender: UISlider) {
-        photoView.alpha = CGFloat(sender.value)
-    }
-    
-    // MARK: Completion Handler
-    
-    // this method downloads the image in the background
+    // this method downloads a huge image on a global queue
     // once finished, the completion closure runs with the image
-    func withBigImage(completionHandler handler: @escaping (UIImage?) -> Void){
+    func downloadBigImage(completionHandler handler: @escaping (UIImage?) -> Void){
         DispatchQueue.global(qos: .userInitiated).async {
             // use url to get the data for the image
             if let url = URL(string: BigImages.whale.rawValue), let imgData = try? Data(contentsOf: url) {
