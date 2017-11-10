@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Main View Controller-->
+        <!--Avoid Cycles!-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="MainViewController" customModule="ClosureMemoryLeak" customModuleProvider="target" sceneMemberID="viewController">
@@ -54,7 +54,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" id="mEJ-O9-dE9"/>
+                    <navigationItem key="navigationItem" title="Avoid Cycles!" id="mEJ-O9-dE9">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="dUA-ZF-TpF"/>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
