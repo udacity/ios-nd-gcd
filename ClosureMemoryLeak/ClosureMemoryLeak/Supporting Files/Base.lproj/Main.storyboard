@@ -6,7 +6,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
-        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -18,11 +17,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="goX-XB-hdO">
-                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="goX-XB-hdO">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0ZS-Nb-rzN">
-                                        <rect key="frame" x="20" y="0.0" width="335" height="401.5"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="249" verticalCompressionResistancePriority="749" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0ZS-Nb-rzN">
+                                        <rect key="frame" x="20" y="64" width="335" height="377"/>
                                         <attributedString key="attributedText">
                                             <fragment>
                                                 <string key="content">Closures can cause memory leaks if they create strong cycles. When this app is running, use the Debug Navigator to view memory changes as you push/pop view controllers.  </string>
@@ -75,39 +74,38 @@
                                         </attributedString>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qmj-wC-j6i">
-                                        <rect key="frame" x="20" y="401.5" width="335" height="67.5"/>
+                                    <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qmj-wC-j6i">
+                                        <rect key="frame" x="20" y="453" width="335" height="30"/>
                                         <state key="normal" title="LeakyViewController"/>
                                         <connections>
                                             <action selector="pushLeakyVC:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gMl-SM-Xma"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5BI-1g-Bbm">
-                                        <rect key="frame" x="20" y="469" width="335" height="67"/>
+                                    <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5BI-1g-Bbm">
+                                        <rect key="frame" x="20" y="495" width="335" height="30"/>
                                         <state key="normal" title="UnownedViewController"/>
                                         <connections>
                                             <action selector="pushUnownedVC:" destination="BYZ-38-t0r" eventType="touchUpInside" id="v0E-Mv-5N3"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gvk-lH-bo8">
-                                        <rect key="frame" x="20" y="536" width="335" height="59"/>
+                                    <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gvk-lH-bo8">
+                                        <rect key="frame" x="20" y="537" width="335" height="30"/>
                                         <state key="normal" title="NoCycleViewController"/>
                                         <connections>
                                             <action selector="pushNoCycleVC:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dGF-Zy-hsr"/>
                                         </connections>
                                     </button>
                                 </subviews>
-                                <edgeInsets key="layoutMargins" top="0.0" left="20" bottom="8" right="20"/>
+                                <edgeInsets key="layoutMargins" top="0.0" left="20" bottom="100" right="20"/>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="goX-XB-hdO" secondAttribute="bottom" id="5Hg-HJ-pdI"/>
-                            <constraint firstItem="goX-XB-hdO" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="6Cs-ct-gOT"/>
-                            <constraint firstItem="goX-XB-hdO" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="cqb-Pd-oBl"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="goX-XB-hdO" secondAttribute="trailing" id="w0O-ex-Q3k"/>
+                            <constraint firstAttribute="bottom" secondItem="goX-XB-hdO" secondAttribute="bottom" id="Ao9-ln-Pli"/>
+                            <constraint firstAttribute="trailing" secondItem="goX-XB-hdO" secondAttribute="trailing" id="Hwh-B5-QNZ"/>
+                            <constraint firstItem="goX-XB-hdO" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="NLJ-Ch-fZT"/>
+                            <constraint firstItem="goX-XB-hdO" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="qqa-SW-eOq"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" title="Avoid Cycles!" id="mEJ-O9-dE9">
                         <barButtonItem key="backBarButtonItem" title="Back" id="dUA-ZF-TpF"/>
