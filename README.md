@@ -17,7 +17,7 @@ Add basic scaffolding with stub implementation of the three main methods:
 ```
     // This method downloads a huge image, blocking the main queue and
     // the UI.
-    // This si for instructional purposes only, never do this.
+    // This is for instructional purposes only, never do this.
     @IBAction func synchronousDownload(sender: UIBarButtonItem) {
     }
     
@@ -34,19 +34,19 @@ Add basic scaffolding with stub implementation of the three main methods:
 
 ### Step 2
 
-Add synchronous example, line by line.
+Add a synchronous example, line by line.
 
 ### Step 2.1
 
-Same as aboved, but compacted into a neat and safe if-let construct.
+Same as above but compacted into a neat and safe if-let construct.
 
 ### Step 3
 
-Add simple asynchronous method.
+Add a simple asynchronous method.
 
 ### Step 4
 
-Add asynchronous code running the completion closure in the background. Eventually this will crash. Explain why completion handlers should go in the main queue.
+Add asynchronous code for running the completion closure in the background. Eventually this will crash. Explain why completion handlers should go in the main queue.
 
 ### Step 4.1
 
@@ -54,7 +54,7 @@ Add asyncronous code that runs the completion block in the main queue. Now we're
 
 ### Step 5
 
-Provide user feedback with an activity indicator. It works everywhere except the synchronous method. Why? Enter the runloop and how to delay a task with GCD.
+Provide user feedback with an activity indicator. It works everywhere except the synchronous method. Why? Enter the runloop and show how to delay a task with GCD.
 
 ### Step 5.1
 
